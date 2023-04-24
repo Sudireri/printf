@@ -36,6 +36,11 @@ int _printf(const char *format, ...)
 			s = va_arg(z, char*);
 			printf("%s", s);
 		}
+		else if (*format == 'd' || *format == 'i')
+		{
+			a = va_arf(z, int);
+			printf("%d", a);
+		}
 		else
 		{
 			return (-1);
