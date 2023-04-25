@@ -1,3 +1,4 @@
+#include <unistd.h>
 #include "main.h"
 #include <stdarg.h>
 #include <stdio.h>
@@ -13,6 +14,7 @@
 int _printf(const char *format, ...)
 {
 	char b;
+	int a;
 	char *s;
 
 	va_list z;
@@ -29,7 +31,7 @@ int _printf(const char *format, ...)
 		if (*format == 'c')
 		{
 			b = va_arg(z, int);
-			putchar(b);
+			printf("%c", b);
 		}
 		else if (*format == 's')
 		{
@@ -38,7 +40,7 @@ int _printf(const char *format, ...)
 		}
 		else if (*format == 'd' || *format == 'i')
 		{
-			a = va_arf(z, int);
+			a = va_arg(z, int);
 			printf("%d", a);
 		}
 		else
